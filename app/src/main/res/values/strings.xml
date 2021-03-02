@@ -49,6 +49,7 @@
     <string name="snackbar_image_uploaded">Copied: %1$s</string>
     <string name="snackbar_upload_failed">Error during upload</string>
     <string name="snackbar_upload_failed_cause">Error during upload: %1$s</string>
+    <string name="snackbar_backpress_confirm">Press the button again to exit</string>
     <string name="snackbar_retry">Retry</string>
     <string name="snackbar_data_reloaded">Emotes reloaded</string>
     <string name="snackbar_data_load_failed_cause">Data loading failed: %1$s</string>
@@ -171,6 +172,12 @@
     <string name="preference_scrollback_length_title">Message scrollback length</string>
     <string name="preference_show_username_title">Show username</string>
     <string name="preference_show_username_key" translatable="false">show_username_key</string>
+    <string name="preference_backpress_disable_key" translatable="false">disable_back_button</string>
+    <string name="preference_backpress_disable_title">Disable Back button</string>
+    <string name="preference_backpress_disable_summary">Do not exit app on button press</string>
+    <string name="preference_backpress_confirm_key" translatable="false">confirm_exit</string>
+    <string name="preference_backpress_confirm_title">Confirm exit</string>
+    <string name="preference_backpress_confirm_summary">Double press back button on exit</string>
 
     <plurals name="viewers">
         <item quantity="one">Live with %d viewer</item>

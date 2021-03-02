@@ -42,4 +42,20 @@
         android:summary="@string/preference_checkered_lines_summary"
         android:title="@string/preference_checkered_lines_title"
         app:iconSpaceReserved="false" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:disableDependentsState="true"
+        android:key="@string/preference_backpress_disable_key"
+        android:summary="@string/preference_backpress_disable_summary"
+        android:title="@string/preference_backpress_disable_title"
+        app:iconSpaceReserved="false" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:dependency="@string/preference_backpress_disable_key"
+        android:key="@string/preference_backpress_confirm_key"
+        android:summary="@string/preference_backpress_confirm_summary"
+        android:title="@string/preference_backpress_confirm_title"
+        app:iconSpaceReserved="false" />
 </PreferenceScreen>

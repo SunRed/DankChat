@@ -2,6 +2,7 @@ package com.flxrs.dankchat
 
 import android.content.*
 import android.os.Bundle
+import android.os.Handler
 import android.os.IBinder
 import android.util.Log
 import androidx.activity.viewModels
@@ -111,6 +112,15 @@ class MainActivity : AppCompatActivity(R.layout.main_activity), AddChannelDialog
         val fragment = supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.fragments?.first()
         if (fragment is MainFragment) {
             fragment.onMessageHistoryDisclaimerResult(shouldLoadHistory)
+        }
+    }
+
+    override fun onBackPressed() {
+        val fragment = supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.fragments?.first()
+        if (fragment is MainFragment) {
+            fragment.handleBackPress()
+        } else {
+            super.onBackPressed()
         }
     }
 

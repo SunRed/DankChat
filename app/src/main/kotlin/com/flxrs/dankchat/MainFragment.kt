@@ -8,6 +8,7 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.text.SpannableStringBuilder
 import android.text.method.LinkMovementMethod
@@ -74,6 +75,7 @@ class MainFragment : Fragment() {
     private val binding get() = bindingRef!!
     private var emoteMenuBottomSheetBehavior: BottomSheetBehavior<MaterialCardView>? = null
     private var mentionBottomSheetBehavior: BottomSheetBehavior<View>? = null
+    private var doubleBackToExitPressedOnce: Boolean = false
 
 
     private lateinit var twitchPreferences: DankChatPreferenceStore
@@ -405,6 +407,19 @@ class MainFragment : Fragment() {
                 activity?.invalidateOptionsMenu()
             }
         }
+    }
+
+    fun handleBackPress() {
+        if(preferences.getBoolean(getString(R.string.preference_backpress_disable_key), false)) {
+            return
+        }
+        if (doubleBackToExitPressedOnce || !preferences.getBoolean(getString(R.string.preference_backpress_confirm_key), true)) {
+            activity?.onBackPressedDispatcher?.onBackPressed()
+            return
+        }
+        doubleBackToExitPressedOnce = true
+        showSnackbar(getString(R.string.snackbar_backpress_confirm))
+        Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
     }
 
     fun mentionUser(user: String) {

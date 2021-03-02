@@ -139,6 +139,11 @@
     <string name="mentions_title">Mentions / Privatnachrichten</string>
     <string name="preference_show_username_title">Nutzername anzeigen</string>
     <string name="snackbar_paste">Einfügen</string>
+    <string name="snackbar_backpress_confirm">Drücke die Taste erneut zum Verlassen</string>
+    <string name="preference_backpress_disable_title">Zurück-Taste deaktivieren</string>
+    <string name="preference_backpress_disable_summary">Schließt die App nicht beim Drücken der Taste</string>
+    <string name="preference_backpress_confirm_title">Verlassen bestätigen</string>
+    <string name="preference_backpress_confirm_summary">Zurück-Taste beim Verlassen der App doppelt drücken</string>
 
     <plurals name="viewers">
         <item quantity="one">Live mit %d Zuschauer</item>
